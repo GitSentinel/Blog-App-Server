@@ -16,7 +16,7 @@ class MySql {
       host: '127.0.0.1',
       port: 3306,
       userName: 'root',
-      password: '12345678',
+      password: '!LDvM%%12@',
       databaseName: 'test',
     );
     await _connection?.connect();

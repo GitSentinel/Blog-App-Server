@@ -18,8 +18,8 @@ import '../routes/index.dart' as index;
 import '../routes/_middleware.dart' as middleware;
 
 void main() async {
-  final address = InternetAddress.anyIPv6;
-  final port = int.parse(Platform.environment['PORT'] ?? '8080');
+  final address = InternetAddress.tryParse('') ?? InternetAddress.anyIPv6;
+  final port = int.tryParse(Platform.environment['PORT'] ?? '8080') ?? 8080;
   hotReload(() => createServer(address, port));
 }
 
@@ -41,3 +41,4 @@ Handler buildHandler() {
     ..all('/ws', (context) => ws.onRequest(context,))..all('/user', (context) => user.onRequest(context,))..all('/upload', (context) => upload.onRequest(context,))..all('/signup', (context) => signup.onRequest(context,))..all('/post', (context) => post.onRequest(context,))..all('/login', (context) => login.onRequest(context,))..all('/like', (context) => like.onRequest(context,))..all('/', (context) => index.onRequest(context,));
   return pipeline.addHandler(router);
 }
+

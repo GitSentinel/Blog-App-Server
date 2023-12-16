@@ -7,7 +7,7 @@ environment:
   sdk: '>=2.19.2 <3.0.0'
 
 dependencies:
-  dart_frog: ^0.3.6
+  dart_frog: ^1.0.1
   dart_frog_web_socket: ^0.1.0-dev.3
   dart_jsonwebtoken: ^2.7.1
   dbcrypt: ^2.0.0
